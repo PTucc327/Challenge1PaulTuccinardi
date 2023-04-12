@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Challenge 1</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Paul Tuccinardi">
+    <link rel= "stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <br>
+    <h1> Lightfall Super League Challenge 1</h1>
+    <h2> By: Paul Tuccinardi</h2>
+ <button id="button">Counter</button>
+    <p id="click-counter">Button clicked: </p>
+   
+   <script>
+      var button = document.getElementById("button");
+      var clickCount = 0;
+      let display = document.getElementById("click-counter");
+      if (localStorage.getItem("clickCount")) {
+         clickCount = parseInt(localStorage.getItem("clickCount"));
+      }
+      button.addEventListener("click", function() {
+         clickCount++;
+         localStorage.setItem("clickCount", clickCount);
+         display.innerHTML = "Button clicked: " +  clickCount + " times";
+         
+      });
+       window.onload = function() {
+         clickCounter = localStorage.getItem("clickCount");
+            display.innerHTML = "Button clicked: " +  clickCounter + " times";
+}
+   </script>
+    
+</body>
+
+</html>
